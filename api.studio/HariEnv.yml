@@ -1,0 +1,18 @@
+kind: environment
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: HariEnv
+  namespace: hari
+  version: '1.0'
+  tags: []
+spec:
+  variables:
+    - key: domain
+      isSecret: false
+      value: https://devrealm3.devportal-aw-us.webmethods-dev.io/portal/
+    - key: mcsp_token
+      isSecret: false
+      value: eyJraWQiOiJnNERQZWRCR1hjTnRyUjEwd05MRHRTUjBlS0ZzVlFSNGVnaklObi1CUHRVIiwiYWxnIjoiUlMyNTYifQ.eyJuYW1lIjoiRFBPVGVzdCIsImRpc3BsYXlOYW1lIjoiRFBPVGVzdCIsImlzcyI6Imh0dHBzOi8vYWNjb3VudC1pYW0ucGxhdGZvcm0udGVzdC5zYWFzLmlibS5jb20vYWNjb3VudC1pYW0vYXBpLzIuMCIsImV4cCI6MTc1MzQzMjYwMiwianRpIjoiN01aU196TzUyNDZ3UW8zQ192Y2ZlQSIsImlhdCI6MTc1MzQyNTQwMiwibmJmIjoxNzUzNDI1MzcyLCJhdWQiOiJTRVJWSUNFLzIwMjUwNTE0LTE1NTItMTAyNC05MGJlLWFmZWM4MjBjZThlOSIsImVudGl0eVR5cGUiOiJTRVJWSUNFSUQiLCJzdWIiOiJhOTYyMWMyZC03YTExLTRiOTgtOGIyNC0zOTNkMWRmZDFmYjYiLCJyb2xlcyI6eyJTRVJWSUNFIjpbIkFQSSBtYW5hZ2VtZW50IGFkbWluIl19LCJhY2NvdW50SWQiOiIyMDI1MDMxMy0wOTMwLTE0NTEtOTA1OS1hNGUxMzgwYjE1MjUiLCJzdWJzY3JpcHRpb25JZCI6IjIwMjUwMzEzLTA5MjktMTIyMi0xMGM2LTQyMmZhYjIxNDI3NCIsInVzZWRCeSI6bnVsbCwiYXBpa2V5VWlkIjoiY2JiMzUwOTUtMjlmMy00MGFhLWI5YWUtNGNkMzA3ODA2ZWJiIn0.GNMRYWP_fbp-3PbPeDJdQbmjQAe5P-mW-0Ao8WqQnCTMJWhLCttKyINiqBDonJNUxWtTkHDNdJqNGkFS90bWDqPwI832s6UZ_sgKQburaHG6bFQzcwAAgueXzZg-suHe0cQIjwN2yTLNsSnxdmBLqmZHfSUK9Kp_XwYNbElcdnNVibWKJTEhfr8vnPDgdCkp6bLMvQXadmSWmkac8wnJhxVAngS9eI2D8_R9OTv3J5YJv5mMO2AId_hjhwS6eurhhCbWKc8tAibmitTTblgRooZbTi-qsP9rPMx-NhCrPZ1XaamePCJZdNKYTuBH3RLpZ7IJ9gGygeGhQv23QZVDxg
+    - key: api_key
+      isSecret: false
+      value: azI6Y2JiMzUwOTUtMjlmMy00MGFhLWI5YWUtNGNkMzA3ODA2ZWJiOlZWZ1RTMVVWUmY3MmRuUnNQYmdFaVFscCsxbE9lVittQ0FUMVBjeDlnbXc9

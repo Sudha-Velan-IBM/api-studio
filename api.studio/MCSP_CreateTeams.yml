@@ -1,0 +1,38 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: MCSP_CreateAPI
+  namespace: api.studio
+  version: "1.0"
+  tags: []
+spec:
+  api:
+    $endpoint: https://dev4726582.a-vir-c1.devportal.ipaas.dev.automation.ibm.com/portal
+  environment:
+    $ref: hari:HariEnv:1.0
+  request:
+    - method: POST
+      resource: /rest/v1/apis
+      headers:
+        - key: Authorization
+          value: Bearer ${mcsp_token}
+      auth: {}
+      assertions:
+        $ref: api.studio:Created-201:1.0
+      payload:
+        formData:
+          - key: name
+            value: APIName
+          - key: type
+            value: swagger
+          - key: method
+            value: url
+          - key: url
+            value: https://petstore.swagger.io/v2/swagger.json
+      parameters:
+        - key: communities
+          value: 3bdf8005-5685-3ef5-b132-de4681963fb6
+        - key: async
+          value: "false"
+        - key: type
+          value: swagger

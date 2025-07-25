@@ -1,0 +1,64 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: test
+  namespace: hari
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $endpoint: "${domain}rest/v1"
+  request:
+    - method: GET
+      resource: /apis
+      headers:
+        - key: Content-Type
+          value: application/json
+      auth:
+        basicAuth:
+          username: "adminuser"
+          password: "Password@123"
+      assertions:
+        $ref: "hari:HariAssertion:1.0"
+      payload:
+        formData:
+          - key: url
+            type: text
+            value: "http://dneonline.com/calculator.asmx?wsdl"
+          - key: type
+            type: text
+            value: "wsdl"
+          - key: async
+            type: text
+            value: "false"
+    - method: POST
+      resource: /apis
+      headers:
+        - key: Content-Type
+          value: "*/*"
+        - key: Accept
+          value: multipart/form-data
+      auth:
+        basicAuth:
+          username: "adminuser"
+          password: "Password@123"
+      assertions:
+        $ref: "api.studio:Created-201:1.0"
+      parameters:
+        - key: async
+          value: "false"
+        - key: type
+          value: swagger
+        - key: communities
+          value: 3bdf8005-5685-3ef5-b132-de4681963fb6
+      payload:
+        raw:
+          json: |
+            {
+            "name": "Import API using Url",
+            "type": "swagger",
+            "method": "url",
+            "url":"https://petstore.swagger.io/v2/swagger.json"
+            }
+  environment:
+    $ref: hari:HariEnv:1.0

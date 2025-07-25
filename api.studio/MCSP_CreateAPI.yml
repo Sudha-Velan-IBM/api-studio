@@ -1,0 +1,23 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: MCSP_GetAPIs
+  namespace: api.studio
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $endpoint: "https://dev4726582.a-vir-c1.devportal.ipaas.dev.automation.ibm.com/portal"
+  environment:
+    $ref: hari:HariEnv:1.0
+  request:
+    - method: GET
+      resource: /rest/v1/apis
+      headers:
+        - key: Content-Type
+          value: application/json
+        - key: Authorization
+          value: Bearer ${mcsp_token}
+      auth: {}
+      assertions:
+        $ref: "hari:HariAssertion:1.0"

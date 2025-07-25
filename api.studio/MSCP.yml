@@ -1,0 +1,30 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: MSCP
+  namespace: api.studio
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $endpoint: "https://account-iam.platform.test.saas.ibm.com/api/2.0/services/202\
+      50514-1552-1024-90be-afec820ce8e9"
+  request:
+    - method: POST
+      resource: /apikeys/token
+      headers:
+        - key: Content-Type
+          value: application/json
+      auth:
+        noauth: true
+      assertions:
+        $ref: "hari:HariAssertion:1.0"
+      payload:
+        raw:
+          json: "{\r
+
+            \  \"apikey\": \"${api_key}\"\r
+
+            }"
+  environment:
+    $ref: hari:HariEnv:1.0

@@ -1,0 +1,12 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: portal
+  namespace: api.studio
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $endpoint: ""
+  environment:
+    $ref: hari:HariEnv:1.0
