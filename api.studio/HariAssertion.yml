@@ -5,4 +5,8 @@ metadata:
   namespace: hari
   version: '1.0'
   tags: []
-spec: []
+spec:
+  - name: 200 - Ok
+    key: code
+    action: equals
+    value: 200
