@@ -8,7 +8,7 @@ metadata:
 spec:
   api:
     $endpoint: "https://account-iam.platform.test.saas.ibm.com/api/2.0/services/202\
-      50514-1552-1024-90be-afec820ce8e9"
+      50625-1934-5013-90ab-c37700416a83"
   request:
     - method: POST
       resource: /apikeys/token
@@ -23,7 +23,9 @@ spec:
         raw:
           json: "{\r
 
-            \  \"apikey\": \"${api_key}\"\r
+            \  \"apikey\":
+            \"azI6MDM2ODcxY2MtYjA2NC00ZTFmLWI2NzItNjc2MGMxNzEwY2FkOk9JQitwRXdNO\
+            GVsVGloQlRoWDVWcEhIK1lWM2creFYzWEdMbWk5aENwSVk9\"\r
 
             }"
   environment:
