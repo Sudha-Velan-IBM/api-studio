@@ -1,0 +1,33 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: Create_CommunityA
+  namespace: api.studio
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $endpoint: "https://env6311743.a-vir-c2.devportal.ipaas.dev.automation.ibm.com/portal"
+  request:
+    - method: GET
+      resource: /rest/v1/communities
+      headers:
+        - key: Content-Type
+          value: application/json
+        - key: Authorization
+          value: Bearer ${mcsp_token}
+      auth:
+        noauth: true
+      assertions:
+        $ref: "api.studio:Created-201:1.0"
+      payload:
+        raw:
+          json: "{\r
+
+            \  \"name\": \"CommunityA\",\r
+
+            \  \"description\": \"This is the description of Community\"\r
+
+            }"
+  environment:
+    $ref: hari:HariEnv:1.0

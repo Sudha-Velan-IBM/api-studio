@@ -1,0 +1,59 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: MCSP_CreateAPI_Url
+  namespace: api.studio
+  version: "1.0"
+  tags: []
+spec:
+  api:
+    $endpoint: https://env6311743.a-vir-c2.devportal.ipaas.dev.automation.ibm.com/portal
+  environment:
+    $ref: hari:HariEnv:1.0
+  request:
+    - method: POST
+      resource: /rest/v1/providers
+      headers:
+        - key: Authorization
+          value: Bearer ${mcsp_token}
+      auth: {}
+      assertions:
+        $ref: api.studio:Created-201:1.0
+      payload:
+        raw:
+          json: "{\r
+
+            \  \"name\": \"Dev\",\r
+
+            \  \"version\": \"10.7\",\r
+
+            \  \"external_key_provider\": false,\r
+
+            \  \"shortDescription\": \"desc\",\r
+
+            \  \"credentials\": \"QWRtaW5pc3RyYXRvcjptYW5hZ2U=\",\r
+
+            \  \"notificationPlugins\": [\r
+
+            \    {\r
+
+            \      \"id\": \"HTTP\",\r
+
+            \      \"pluginParameters\": {\r
+
+            \        \"com.aris.umc.apiportal.external.event.notify.endpoint\":
+            \"http://api-dev.xyz.com/rest/apigateway/accesstokens\",\r
+
+            \        \"com.aris.umc.apiportal.external.event.notify.method\":
+            \"POST\",\r
+
+            \        \"com.aris.umc.apiportal.external.event.notify.contentType\
+            \": \"application/json\"\r
+
+            \      }\r
+
+            \    }\r
+
+            \  ]\r
+
+            }\r\n"
