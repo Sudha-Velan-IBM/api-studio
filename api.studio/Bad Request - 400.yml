@@ -1,12 +1,12 @@
 kind: assertion
 apiVersion: api.webmethods.io/beta
 metadata:
-  name: OK 200
-  namespace: hari
+  name: Bad Request - 400
+  namespace: api.studio
   version: '1.0'
   tags: []
 spec:
-  - name: 200 - Ok
+  - name: "400"
     key: code
     action: equals
-    value: 200
+    value: 400
